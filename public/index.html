@@ -30,8 +30,10 @@
     </div>
     <div id="signed_in" class="uk-container">
       <h3><span id="username">USER</span>さん、こんにちは！</h3>
+      <button id="button_signout" name="signout">ログアウト</button>
     </div>
   </div>
+
   <script type='text/javascript'>
     document.getElementById('button_signin').addEventListener('click', () => {
       const password = document.getElementById('password').value;
@@ -50,6 +52,10 @@
       });
     });
 
+    document.getElementById('button_signout').addEventListener('click', () => {
+      firebase.auth().signOut();
+    })
+
     function initPage() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -66,6 +72,7 @@
         } else {
           // User is signed out.
           document.getElementById('pass_form').style.display = "block";
+          document.getElementById('signed_in').style.display = "none";
         }
       });
     }
