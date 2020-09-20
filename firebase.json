@@ -6,6 +6,12 @@
   },
   "hosting": {
     "public": "public",
+    "rewrites": [
+      {
+        "source": "content/*",
+        "function": "loadContents"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
