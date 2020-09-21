@@ -69,6 +69,11 @@
           document.getElementById('username').textContent = displayName;
           document.getElementById('signed_in').style.display = "block";
           document.getElementById('pass_form').style.display = "none";
+          firebase.auth().currentUser.getIdToken(true).then(function (idToken) {
+            window.location.href = "content/maincontent.html?token=" + idToken;
+          }).catch(function (error) {
+            console.log(error);
+          });
         } else {
           // User is signed out.
           document.getElementById('pass_form').style.display = "block";
@@ -78,7 +83,6 @@
     }
 
     window.onload = initPage;
-
   </script>
 </body>
 
