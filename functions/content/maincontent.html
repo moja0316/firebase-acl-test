@@ -24,14 +24,5 @@
             <a href="subcontent.html">サブコンテンツへ</a>
         </div>
     </div>
-    <script type="text/javascript">
-        function addToken() {
-            document.querySelectorAll('a').forEach((item) => {
-                const origin = item.href;
-                item.href = origin + window.location.search;
-            })
-        }
-        window.onload = addToken;
-    </script>
 </body>
 </head>

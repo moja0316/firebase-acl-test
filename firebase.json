@@ -10,6 +10,14 @@
       {
         "source": "content/*",
         "function": "loadContents"
+      },
+      {
+        "source": "/sessionLogin",
+        "function": "loadContents"
+      },
+      {
+        "source": "/loginCsrf",
+        "function": "loadContents"
       }
     ],
     "ignore": [
